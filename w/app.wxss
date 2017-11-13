@@ -1,0 +1,51 @@
+/**app.wxss**/
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+}
+
+page {
+  height: 100%;
+}
+
+.head {
+  height: 90rpx;
+  /* width: 100%; */
+  display: flex;
+  text-align: center;
+  border-bottom: 1rpx solid #eee;
+  background: #fff;
+}
+
+.head navigator,.head .navigateBlock {
+  height: 90rpx;
+  width: 82rpx;
+  line-height: 90rpx;
+}
+
+.head text {
+  display: block;
+  height: 90rpx;
+  line-height: 90rpx;
+  width: 584rpx;
+  font-size: 32rpx;
+}
+
+.head navigator .go-back {
+  width: 15rpx;
+  height: 30rpx;
+  /* vertical-align:middle; *//* display: inline;  */
+}
+
+.head navigator .home {
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align:text-bottom;
+  /* vertical-align:middle; */
+}

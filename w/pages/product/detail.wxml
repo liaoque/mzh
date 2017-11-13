@@ -1,0 +1,41 @@
+<!--pages/product/detail.wxml-->
+<!-- <text>pages/product/detail.wxml</text> -->
+<!--pages/product/list.wxml-->
+<view class="product-info">
+  <view class="head">
+    <!-- <view class="navigateBlock">
+   </view> -->
+    <navigator delta="1" open-type="navigateBack">
+      <image class="go-back" src="http://a5.jmstatic.com/f8f6fcf77a736300/left_arrow.png"></image>
+    </navigator>
+    <text>{{title}}</text>
+    <navigator open-type="switchTab" url="/pages/index/index">
+      <image class="home" src="http://a5.jmstatic.com/cf4cd6f2fe742a74/home.png"></image>
+    </navigator>
+  </view>
+  <view class="fold">
+    <view class="row" bindtap="moreContent">
+      <image class="up {{moreDialog.down}}" src="http://a5.jmstatic.com/f8f6fcf77a736300/left_arrow.png"></image>
+    </view>
+    <view animation="{{animationData}}"  class="moreDialog" >
+        <view id="moreDialogcCntent">
+        111
+        </view>
+    </view>
+  </view>
+
+  <view class="info">
+    <swiper indicator-dots="true" autoplay="true" >
+      <block wx:for="{{info.images}}">
+        <swiper-item>
+          <image src="{{item}}"   />
+        </swiper-item>
+      </block>
+    </swiper>
+
+
+  </view>
+
+
+
+</view>

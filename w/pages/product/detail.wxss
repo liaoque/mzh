@@ -1,0 +1,42 @@
+.product-info{
+  height: 100%;
+}
+.product-info .info{
+  height: 1054rpx;
+}
+.product-info .info swiper{
+  height: 100%;
+}
+
+.fold .row {
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+}
+.fold  .row image{
+   width: 15rpx;
+   height: 30rpx;
+   margin: 0 auto;
+   position: relative;
+   vertical-align: middle;
+}
+
+image.up{
+  transform:rotate(-90deg);
+}
+
+image.down{
+  transform:rotate(90deg);
+}
+
+.moreDialog{
+  position: absolute;
+  top:152rpx;
+  width: 100%;
+  height:0px;
+  z-index: 999;
+  background: #fff;
+  transition: all 5s;
+  transform: scale(0,100%);
+  overflow: hidden;
+}

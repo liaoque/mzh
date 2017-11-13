@@ -1,0 +1,20 @@
+<!--pages/product/types.wxml-->
+<!-- <text>pages/product/types.wxml</text> -->
+<view class="product-type">
+  <view class="product-type-left">
+    <view class="type-banners {{index == current ? 'current' : ''}}"  data-banner-index="{{index}}" bindtap="tapType" wx:for="{{typeList}}">
+  {{item.title}}
+    </view>
+  </view>
+  <scroll-view scroll-y scroll-into-view="{{toView}}" scroll-with-animation class="product-type-right">
+    <view class="type-group" wx:for="{{typeList}}">
+      <text id="go{{index}}" class="type-h3">{{item.title}}</text>
+      <view class="type-views" wx:for="{{item.list}}" wx:for-item="productType">    
+        <navigator  url="{{productType.url}}"  open-type="navigate" hover-class="navigator-hover">
+        <image src="{{productType.logo}}"></image>
+        <text class="type-title">{{productType.title}}</text>
+        </navigator>
+      </view>
+    </view>
+  </scroll-view>
+</view>

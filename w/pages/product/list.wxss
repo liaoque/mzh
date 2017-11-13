@@ -1,0 +1,49 @@
+/* pages/product/list.wxss */
+
+.product-list {
+  width: 100%;
+}
+
+.product-page {
+}
+
+.product-page scroll-view .info{
+  display: flex;
+  flex-wrap: wrap ;
+  height: 1104rpx;
+}
+
+.product-page .product-block {
+  width: 372rpx;
+  text-align: center;
+  font-weight: 400;
+}
+
+.product-page .product-block:nth-of-type(odd){
+  padding-right: 3rpx;
+}
+.product-page .product-block:nth-of-type(even){
+   padding-left: 3rpx;
+}
+
+.product-page .product-block image {
+  width: 100%;
+  display:block;
+
+}
+
+.product-page .product-block text {
+  /* font-size: 12px; */
+  font-size: 24rpx;
+  line-height: 36rpx;
+  /* line-height: 90rpx; */
+  color: #333;
+  height: 36rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 18rpx;
+  display:block;
+
+}
+
