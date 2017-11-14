@@ -7,6 +7,10 @@ Page({
    */
   data: {
     title: '商品列表',
+    type: {
+      isIos: false,
+      name: ''
+    },
     list: [
 
     ]
@@ -47,7 +51,20 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    var self = this;
+    wx.getSystemInfo({
+      success: function(res){
+        self.setData({
+          type: {
+            isIos: (res.system + '').substring(0, 3).toLocaleLowerCase() == 'ios',
+            name: res.system
+          }
+        });
+      },
+      fail: function(error){
+        console.log(error)
+      }
+    });
   },
 
   /**

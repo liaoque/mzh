@@ -12,6 +12,10 @@ Page({
       height: 0,
       down: ''
     },
+    type: {
+      isIos: false,
+      name: ''
+    },
     animationData: {},
     info:{
       images:[
@@ -22,14 +26,12 @@ Page({
   },
 
   moreContent: function(event){
-
     var show =true, down='', height = '0';
     if (this.data.moreDialog.show){
       show = false;
       down = 'down';
       height = this.data.moreDialog.height ;
     }
-    console.log(height, this.data.moreDialog.show)
     this.animation.height(height).step()
     this.setData({
       animationData: this.animation.export(),
@@ -48,6 +50,7 @@ Page({
    */
   onLoad: function (options) {
     var self = this;
+    console.log(this)
     wx.request({
       url: app.getBaseUrl() + '/product/info/' + options.id, //仅为示例，并非真实的接口地址
       header: {
@@ -58,6 +61,9 @@ Page({
         for (var i = 0; i < res.data.images.length; i++) {
           imageList.push(app.getImageUrl() + '/' + res.data.images[i].image );
         }
+        wx.setNavigationBarTitle({
+          title: res.data.name
+        })
         self.setData({
           title: res.data.name,
           info: {
@@ -72,7 +78,20 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+    var self = this;
+    wx.getSystemInfo({
+      success: function (res) {
+        self.setData({
+          type: {
+            isIos: (res.system + '').substring(0, 3).toLocaleLowerCase() == 'ios',
+            name: res.system
+          }
+        });
+      },
+      fail: function (error) {
+        console.log(error)
+      }
+    });
   },
 
   /**

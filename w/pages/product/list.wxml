@@ -1,8 +1,9 @@
 <!--pages/product/list.wxml-->
 <view class="product-list">
-   <view class="head">
+  
    <!-- <view class="navigateBlock">
    </view> -->
+  <view class="head" wx:if="{{!type.isIos}}">
      <navigator delta="1" open-type="navigateBack">
       <image class="go-back" src="http://a5.jmstatic.com/f8f6fcf77a736300/left_arrow.png"></image>
     </navigator> 
@@ -10,7 +11,7 @@
     <navigator open-type="switchTab" url="/pages/index/index">
       <image class="home" src="http://a5.jmstatic.com/cf4cd6f2fe742a74/home.png"></image>
     </navigator>
-  </view> 
+  </view>
 
   <view class="product-page">
     <scroll-view scroll-y enable-back-to-top bindscrolltolower="getMore">
