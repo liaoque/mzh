@@ -32,7 +32,7 @@ Page({
           list.push({
             id: res.data[i].product_id,
             title: res.data[i].name,
-            image: app.getImageUrl() + '/' + res.data[i].image + '.0X0.jpg',
+            image: app.getImageUrl() + '/' + res.data[i].image ,
           });
         }
         self.setData({

@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    title: 'vero moda夏季荷叶边连衣裙',
+    title: '',
     moreDialog:{
       show: true,
       height: 0,
@@ -56,7 +56,7 @@ Page({
       success: function (res) {
         var imageList = [];
         for (var i = 0; i < res.data.images.length; i++) {
-          imageList.push(app.getImageUrl() + '/' + res.data.images[i].image + '.0x0.jpg');
+          imageList.push(app.getImageUrl() + '/' + res.data.images[i].image );
         }
         self.setData({
           title: res.data.name,

@@ -19,10 +19,14 @@
     "list": [
       {
         "pagePath": "pages/index/index",
+        "iconPath": "image/icon_index.png",
+        "selectedIconPath": "image/icon_index_s.png",
         "text": "首页"
       },
       {
         "pagePath": "pages/product/types",
+        "iconPath": "image/icon_typelist.png",
+        "selectedIconPath": "image/icon_typelist_s.png",
         "text": "分类"
       }
     ]
