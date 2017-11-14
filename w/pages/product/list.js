@@ -1,45 +1,18 @@
 // pages/product/detail.js
+var app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-      title:'商品列表',
-      list:[
-        {
-          id:'1',
-          image: 'https://img.alicdn.com/bao/uploaded/i2/TB1g4L_PFXXXXcyXVXXXXXXXXXX_!!0-item_pic.jpg_560x840Q50s50.jpg_.webp',
-          title:'vero moda夏季荷叶边连衣裙'
-        },
-        {
-          image: 'https://img.alicdn.com/bao/uploaded/i2/TB1g4L_PFXXXXcyXVXXXXXXXXXX_!!0-item_pic.jpg_560x840Q50s50.jpg_.webp',
-          title: 'vero moda夏季荷叶边连衣裙'
-        },
-        {
-          image: 'https://img.alicdn.com/bao/uploaded/i2/TB1g4L_PFXXXXcyXVXXXXXXXXXX_!!0-item_pic.jpg_560x840Q50s50.jpg_.webp',
-          title: 'vero moda夏季荷叶边连衣裙'
-        },
-        {
-          image: 'https://img.alicdn.com/bao/uploaded/i2/TB1g4L_PFXXXXcyXVXXXXXXXXXX_!!0-item_pic.jpg_560x840Q50s50.jpg_.webp',
-          title: 'vero moda夏季荷叶边连衣裙'
-        },
-        {
-          image: 'https://img.alicdn.com/bao/uploaded/i2/TB1g4L_PFXXXXcyXVXXXXXXXXXX_!!0-item_pic.jpg_560x840Q50s50.jpg_.webp',
-          title: 'vero moda夏季荷叶边连衣裙'
-        },
-        {
-          image: 'https://img.alicdn.com/bao/uploaded/i2/TB1g4L_PFXXXXcyXVXXXXXXXXXX_!!0-item_pic.jpg_560x840Q50s50.jpg_.webp',
-          title: 'vero moda夏季荷叶边连衣裙'
-        },
-        {
-          image: 'https://img.alicdn.com/bao/uploaded/i2/TB1g4L_PFXXXXcyXVXXXXXXXXXX_!!0-item_pic.jpg_560x840Q50s50.jpg_.webp',
-          title: 'vero moda夏季荷叶边连衣裙'
-        }
-      ]
+    title: '商品列表',
+    list: [
+
+    ]
   },
 
-  getMore: function(event){
+  getMore: function (event) {
     console.log(event)
   },
 
@@ -47,7 +20,27 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var self = this;
+    wx.request({
+      url: app.getBaseUrl() + '/product/list/' + options.id, //仅为示例，并非真实的接口地址
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success: function (res) {
+        var list = [];
+        for (var i = 0; i < res.data.length; i++) {
+          list.push({
+            id: res.data[i].product_id,
+            title: res.data[i].name,
+            image: app.getImageUrl() + '/' + res.data[i].image + '.0X0.jpg',
+          });
+        }
+        self.setData({
+          list: list
+        })
 
+      }
+    })
   },
 
   /**

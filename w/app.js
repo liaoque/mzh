@@ -25,5 +25,13 @@ App({
 
   globalData: {
     userInfo: null
+  },
+
+  getBaseUrl: function() {
+    return 'https://api.qq2021.com'
+  },
+
+  getImageUrl: function(){
+    return 'http://b.qq2021.com/image';
   }
 })

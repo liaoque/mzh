@@ -1,4 +1,5 @@
 // pages/product/detail.js
+var app = getApp()
 Page({
 
   /**
@@ -14,8 +15,8 @@ Page({
     animationData: {},
     info:{
       images:[
-        'https://img.alicdn.com/bao/uploaded/i2/TB1g4L_PFXXXXcyXVXXXXXXXXXX_!!0-item_pic.jpg_560x840Q50s50.jpg_.webp',
-        'https://img.alicdn.com/bao/uploaded/i2/TB1g4L_PFXXXXcyXVXXXXXXXXXX_!!0-item_pic.jpg_560x840Q50s50.jpg_.webp'
+        // 'https://img.alicdn.com/bao/uploaded/i2/TB1g4L_PFXXXXcyXVXXXXXXXXXX_!!0-item_pic.jpg_560x840Q50s50.jpg_.webp',
+        // 'https://img.alicdn.com/bao/uploaded/i2/TB1g4L_PFXXXXcyXVXXXXXXXXXX_!!0-item_pic.jpg_560x840Q50s50.jpg_.webp'
       ],
     }
   },
@@ -46,7 +47,25 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var self = this;
+    wx.request({
+      url: app.getBaseUrl() + '/product/info/' + options.id, //仅为示例，并非真实的接口地址
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success: function (res) {
+        var imageList = [];
+        for (var i = 0; i < res.data.images.length; i++) {
+          imageList.push(app.getImageUrl() + '/' + res.data.images[i].image + '.0x0.jpg');
+        }
+        self.setData({
+          title: res.data.name,
+          info: {
+            images: imageList
+          }
+        })
+      }
+    })
   },
 
   /**

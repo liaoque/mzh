@@ -21,6 +21,11 @@
    vertical-align: middle;
 }
 
+swiper-item image{
+   width: 748.8rpx;
+   height: 1050.66rpx;
+}
+
 image.up{
   transform:rotate(-90deg);
 }

@@ -15,6 +15,16 @@ Page({
         'title': '衣服',
         'list': [
           {
+            "url": "/pages/product/list?id=60",
+            "title": "夹克",
+            "logo": "https://a3.vimage1.com/upload/goadmin/2017/11/13/48/15105421512781.png"
+          },
+          {
+            "url": "/pages/product/list?id=61",
+            "title": "风衣",
+            "openType": "",
+            "logo": "https://a3.vimage1.com/upload/goadmin/2017/10/23/82/15087476108290.jpg"
+          }/*, {
             "url": "/pages/product/list",
             "title": "T恤",
             "logo": "https://a3.vimage1.com/upload/goadmin/2017/08/02/78/15016695733849.png"
@@ -34,17 +44,7 @@ Page({
             "title": "衬衫",
             "openType": "",
             "logo": "https://a4.vimage1.com/upload/category/2017/06/15/137/2a1ac06f-3505-45ee-a944-8bf133915acf.png"
-          }, {
-            "url": "/pages/product/list",
-            "title": "T恤",
-            "logo": "https://a3.vimage1.com/upload/goadmin/2017/08/02/78/15016695733849.png"
-          },
-          {
-            "url": "/pages/product/list?id=2",
-            "title": "衬衫",
-            "openType": "",
-            "logo": "https://a4.vimage1.com/upload/category/2017/06/15/137/2a1ac06f-3505-45ee-a944-8bf133915acf.png"
-          }
+          }*/
         ]
       },
       {
@@ -166,7 +166,7 @@ Page({
     // this.animation = animation;
     var query = wx.createSelectorQuery()
     query.select('.product-type').boundingClientRect(function (res) {
-      console.log(res)
+    //  console.log(res)
     }).exec();
   },
 
