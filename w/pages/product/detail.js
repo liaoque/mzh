@@ -1,5 +1,8 @@
 // pages/product/detail.js
 var app = getApp()
+
+import utilRequest from '../../utils/request.js'
+
 Page({
 
   /**
@@ -52,7 +55,7 @@ Page({
     var self = this;
     console.log(this)
     wx.request({
-      url: app.getBaseUrl() + '/product/info/' + options.id, //仅为示例，并非真实的接口地址
+      url: utilRequest.productInfoUrl(options.id) , //仅为示例，并非真实的接口地址
       header: {
         'content-type': 'application/json' // 默认值
       },
