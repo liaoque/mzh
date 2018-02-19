@@ -52,7 +52,7 @@ Page({
         'title': '裤子',
         'list': [
           {
-            "url": "https://a4.vimage1.com/upload/category/2017/08/02/98/b6171eb1-5106-46d3-8b6b-87fbcbb6f032.png",
+            "url": "/pages/product/list?id=2",
             "title": "休闲裤",
             "logo": "https://a4.vimage1.com/upload/category/2017/08/02/98/b6171eb1-5106-46d3-8b6b-87fbcbb6f032.png"
           },

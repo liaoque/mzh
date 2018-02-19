@@ -20,6 +20,7 @@ Page({
 
   getMore: function (event) {
     console.log(event)
+   
   },
 
   /**

@@ -16,7 +16,7 @@
   <view class="product-page">
     <scroll-view scroll-y enable-back-to-top bindscrolltolower="getMore">
       <view class="info">
-      <view class="product-block" wx:for="{{list}}">
+      <view class="product-block"  wx:key="{{_key}}" wx:for="{{list}}">
       <navigator open-type="switchTab"  open-type="navigate" url="/pages/product/detail?id={{item.id}}">
         <image src="{{item.image}}"></image>
         <text>{{item.title}}</text>
